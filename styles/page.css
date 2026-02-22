@@ -1,43 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Press+Start+2P&display=swap');
 
+:root {
+  --bg-primary: #1e1f22;
+  --bg-secondary: #2b2d31;
+  --accent: #5865f2;
+  --text: #ffffff;
+  --text-muted: #b9bbbe;
+}
+
 body {
-  background-color: #000344
+  background-color: var(--bg-primary);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Navigation buttons */
 .navbutton {
-  color: white;
-  background-color: transparent;
-  border: 3px solid white;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 5px;
+  color: var(--text);
+  background-color: var(--bg-secondary);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  margin: 6px;
   cursor: pointer;
-}
-
-#navbuttons {
-  display: none;
-  margin: 5px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.gamelink, .link {
+  transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: "DM Sans";
-  font-size: 20px;
+  font-size: 16px;
 }
 
-.gamelink:hover, .link:hover {
-  color: gray;
+.navbutton:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
 }
 
+/* Optional nav section container */
+#navbuttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Links and text */
 a, p {
   text-decoration: none;
-  color: white;
+  color: var(--text);
   text-align: center;
 }
 
+.gamelink, .link {
+  font-size: 18px;
+  color: var(--accent);
+  transition: color 0.25s ease;
+}
+
+.gamelink:hover, .link:hover {
+  color: #7289da;
+}
+
+/* Page counter / footer */
 #usercounter {
-  margin: auto;
-  width: 50%
+  margin: 20px auto;
+  width: 50%;
+  color: var(--text-muted);
+  font-size: 14px;
 }
