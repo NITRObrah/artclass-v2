@@ -1,93 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Press+Start+2P&family=Source+Code+Pro&display=swap');
-body {
-  background-color: #000344;
-  color: white;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 5px solid white;
-  border-radius: 7px;
-  padding: 75px;
+
+:root {
+  --bg-primary: #1e1f22;
+  --bg-secondary: #2b2d31;
+  --accent: #5865f2;
+  --text: #ffffff;
+  --text-muted: #b9bbbe;
+  --border: #202225;
 }
 
-p, a {
-  font-family: "DM Sans";
-  font-size: 20px;
+body {
+  background-color: var(--bg-primary);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--border);
+  border-radius: 12px;
+  padding: 60px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
-  font-family: "Press Start 2P";
-  font-size: 25px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 25px;
+}
+
+p, a {
+  font-size: 18px;
+  color: var(--text);
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--accent);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
+a:hover, .pageLink:hover, .link:hover {
+  color: #7289da;
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
 .navbutton {
-  color: white;
-  background-color: #000344;
-  border: 3px solid white;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 5px;
+  color: var(--text);
+  background-color: var(--bg-secondary);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin: 8px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.gamelink:hover, .pageLink:hover, .link:hover {
-  color: gray;
-  cursor: pointer;
+.navbutton:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
 }
 
 .bmDescrip {
-  color: #979797;
+  color: var(--text-muted);
 }
 
 table, th, td {
-  border:none;
+  border: none;
   text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-family: "DM Sans";
-  font-size: 20px;
+  padding: 12px;
+  font-size: 18px;
 }
 
 th {
-	font-weight: bold;
+  font-weight: bold;
+  color: var(--accent);
 }
 
 button {
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-  font-family: "DM Sans";
-  color: inherit;
-  font-size: inherit;
-  padding-left: 25px;
-  padding-right: 25px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  font-size: 16px;
   cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
 
+button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
 }
 
 .code {
-  font-family: "Source Code Pro";
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 10px;
+  font-family: "Source Code Pro", monospace;
+  background-color: var(--bg-secondary);
+  color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 #homeNav {
-  padding-left: 5px;
-  padding-right: 5px;
-
+  margin: 0 6px;
 }
 
 #usercounter {
   margin: auto;
-  width: 50%
+  width: 50%;
 }
+
